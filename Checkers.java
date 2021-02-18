@@ -116,7 +116,7 @@ public class Checkers implements Game<Board, Move, String> {
 						&& action.getPiece().getNum() == currentPiece.getNum()
 						&& action.getPiece().isHumanPiece() == currentPiece.isHumanPiece()) {
 
-					// Remove jumped piece (if applicapable)
+					// Remove jumped piece 
 					if (Math.abs(action.getRow() - currentPiece.getRow()) == 4
 							&& Math.abs(action.getCol() - currentPiece.getCol()) == 4) {
 						int jumpedRowDiff = action.getRow() - currentPiece.getRow();
@@ -720,11 +720,11 @@ public class Checkers implements Game<Board, Move, String> {
 						// Determine the agent's action
 						action = abSearch.makeDecision(board);
 
-						// Print agent's move
-						System.out.println("Agent's Move: ");
+						// Print AI's move
+						System.out.println("AI's Move: ");
 						System.out.println(action.getPiece().getNum() + " - " + action.getMoveDesc());
 
-						// Update board with the agent's move
+						// Update board with the AI's move
 						result = abSearch.game.getResult(board, action);
 						board = new Board(result);
 					}
